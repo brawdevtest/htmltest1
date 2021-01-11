@@ -1,0 +1,175 @@
+<html lang="en" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <title>Home | Aurora</title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="keywords" content="aurora, programmer, fortnite, aurora, slushia, omairma, darkblade, private server"> 
+  <meta name="description" content="Official website for the Aurora Private Server."> 
+  <meta name="author" content="omairma"> 
+  <meta name="robots" content="no"> 
+  <meta name="theme-color" content="#E8AEFF"> 
+  <meta property="og:site_name" content="aurorafn.dev"> 
+  <meta property="og:title" content="Aurora"> 
+  <meta property="og:type" content="video.movie"> 
+  <meta property="og:url" content="https://aurorafn.dev"> 
+  <meta property="og:image" content="https://cdn.aurorafn.dev/embeds/Aurora-Logo-1000px.png"> 
+  <meta property="og:description" content="Welcome to Aurora, a Fortnite private server with actual accounts, unlimitied customization, parties, and more!"> 
+  <!-- --> 
+  <!--<script type="text/javascript">
+            async function setupLayout() {
+                var cosmetics = await getCosmeticsById("");
+
+                if (cosmetics.length == 0) {
+                    setDefaultPfp("cid_561_athena_commando_m_rebirthdefaultb")
+                }
+                else
+                    setLayoutPfp(cosmetics[0])
+
+            }
+        </script>--> 
+  <link rel="stylesheet" href="/css/reset.css"> 
+  <link rel="stylesheet" href="/css/style.css"> 
+  <link rel="stylesheet" href="/css/fontawesome.css"> 
+  <link rel="stylesheet" href="/css/homepage.css"> 
+  <link rel="preload" as="script" href="/js/navbar.js">
+  <link rel="preload" as="script" href="/js/fortniteApi.js">
+  <link rel="preload" as="script" href="/js/accountpanel.js">
+  <link rel="preload" as="script" href="/js/modal.js">
+  <link rel="preload" as="script" href="/lib/jquery/dist/jquery.min.js">
+  <link rel="preload" as="script" href="https://www.google.com/recaptcha/api.js">
+  <link rel="preload" as="script" href="/js/layout.js">
+ </head> 
+ <body> 
+  <header id="navbar"> 
+   <img src="/img/aurora-icon-lq.png" class="aurora" onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '/#'" alt="Aurora"> 
+   <ul class="desktop-navbar"> 
+    <li><a href="/download">Download</a></li> 
+    <li><a href="https://discord.gg/AuroraFN">Discord</a></li> 
+    <li><a href="https://trello.com/b/6yWI6ZvP/aurora">Trello</a></li> 
+   </ul> 
+   <ul class="minimized-navbar"> 
+    <li><a href="/download"><i class="fas fa-download"></i></a></li> 
+    <li><a href="https://discord.gg/AuroraFN"><i class="fab fa-discord"></i></a></li> 
+    <li><a href="https://trello.com/b/6yWI6ZvP/aurora"><i class="fab fa-trello"></i></a></li> 
+   </ul> 
+   <div class="account-panel"> 
+    <a class="button" onclick="if (!window.__cfRLUnblockHandlers) return false; openModal('login-modal')">Log in</a> 
+   </div> 
+  </header> 
+  <div class="section"> 
+   <div class="aurora-bg"></div> 
+   <div class="section-content"> 
+    <div class="field" id="introduction"> 
+     <h1>Aurora</h1> 
+     <h3>A Fortnite private server with actual accounts, unlimited customization, parties, and more!</h3> 
+     <a class="button" href="#about">About</a> 
+     <a class="button" href="#contact">Contact</a> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section-b" id="about"> 
+   <div class="section-content"> 
+    <div class="field"> 
+     <h1>About</h1> 
+     <h3>Aurora was created with the goals of making a server that could use up as much as the lobby as we could.</h3> 
+     <h3>Things like parties &amp; friends were a must in our minds, and we were able to pull it off.</h3> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="section" id="contact"> 
+   <div class="section-content"> 
+    <span class="divider-text">or</span> 
+    <div class="division horizontal"> 
+     <div class="field"> 
+      <h1>Casual</h1> 
+      <h3>If you'd like to hang out with us and chat with the community, join us over at <a href="https://discord.gg/AuroraFN">our Discord Server!</a></h3> &nbsp; 
+      <h3>Alternatively, you can follow us for updates on <a href="https://www.twitter.com/AuroraFN_">Twitter</a>!</h3> 
+     </div> 
+     <hr> 
+     <span class="divider-mobile">or</span> 
+     <div class="field"> 
+      <h1>Business</h1> 
+      <h3>If you have a business inquiry, feel free to contact us at <a href="mailto:contact@aurorafn.dev">contact@aurorafn.dev</a>.</h3> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="login-modal minimized" id="login-modal"> 
+   <form method="post" id="signup-form"> 
+    <div class="modal-left modal-overlay hidden" style="margin-top: -200px;" id="login-modal-signup"> 
+     <h1 class="modal-title">Create an account</h1> 
+     <p class="modal-desc">New to Aurora? Create your account here.</p> 
+     <div class="input-block"> 
+      <input type="text" id="signup-username" placeholder="Username" required data-val="true" data-val-required="The SignupInput.Username field is required." name="SignupInput.Username" value=""> 
+      <span class="label">Username</span> 
+     </div> 
+     <div class="input-block"> 
+      <input type="email" id="signup-email" placeholder="Email" required data-val="true" data-val-email="The SignupInput.Email field is not a valid e-mail address." data-val-required="The SignupInput.Email field is required." name="SignupInput.Email" value=""> 
+      <span class="label">Email</span> 
+     </div> 
+     <div class="input-block"> 
+      <input type="password" id="signup-password" placeholder="Password" required data-val="true" data-val-required="The SignupInput.Password field is required." name="SignupInput.Password"> 
+      <span class="label">Password</span> 
+     </div> 
+     <div class="modal-buttons"> 
+      <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; closeModalOverlay('login-modal', 'login-modal-signup')">Sign in instead</a> 
+      <button class="button" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; openModalOverlay('login-modal', 'login-modal-captcha')">Sign up</button> 
+     </div> 
+    </div> 
+    <div class="modal-left modal-overlay hidden" style="margin-top: -200px;" id="login-modal-captcha"> 
+     <h1 class="modal-title">Are you a robot?</h1> 
+     <p class="modal-desc">Beep boop... boop beep?</p> 
+     <div class="g-recaptcha" data-sitekey="6Le-uuMZAAAAAEt62o-2JqC8bBvkSDNWh07IPDtB"></div> 
+     <div class="modal-buttons"> 
+      <input type="submit" class="button" value="Confirm"> 
+     </div> 
+    </div> 
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8ADtjaCR-ANFu2Ayi-oVwhWuHBYTCV2J_4IWvJq9jDBRAHgCUFe3E_tuBspJ0b5xrDGZ74iKyCegk2wUCzklNE_Ic1PwoYoNmn01nCyytKrO_YKuB63phpF6dZJgJJHUAltSlyOkjV3QYo7jt4kasvY">
+   </form> 
+   <div class="modal-left" id="login-modal-login"> 
+    <h1 class="modal-title">Welcome!</h1> 
+    <p class="modal-desc">To use Aurora, you need to have an Aurora account.</p> 
+    <form method="post"> 
+     <div class="input-block"> 
+      <input type="email" id="login-email" placeholder="Email" required data-val="true" data-val-email="The LoginInput.Email field is not a valid e-mail address." data-val-required="The LoginInput.Email field is required." name="LoginInput.Email" value=""> 
+      <span class="label">Email</span> 
+     </div> 
+     <div class="input-block"> 
+      <input type="password" id="login-password" placeholder="Password" required data-val="true" data-val-required="The LoginInput.Password field is required." name="LoginInput.Password"> 
+      <span class="label">Password</span> 
+     </div> 
+     <div class="modal-buttons">
+       &nbsp; 
+      <input value="Login" type="submit" class="button"> 
+     </div> 
+     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8ADtjaCR-ANFu2Ayi-oVwhWuHBYTCV2J_4IWvJq9jDBRAHgCUFe3E_tuBspJ0b5xrDGZ74iKyCegk2wUCzklNE_Ic1PwoYoNmn01nCyytKrO_YKuB63phpF6dZJgJJHUAltSlyOkjV3QYo7jt4kasvY">
+    </form> 
+    <p class="sign-up">Don't have an account? <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; openModalOverlay('login-modal', 'login-modal-signup');">Sign up</a></p> 
+   </div> 
+   <div class="modal-right"> 
+    <i class="fas fa-times" id="close-button" onclick="if (!window.__cfRLUnblockHandlers) return false; closeModalOverlay('login-modal', 'login-modal-signup'); closeModalOverlay('login-modal', 'login-modal-captcha'); closeModal('login-modal');"></i> 
+   </div> 
+  </div> 
+  <noscript> 
+   <div class="login-modal"> 
+    <div class="modal-left"> 
+     <h1 class="modal-title">Error</h1> 
+     <p class="modal-desc">This site needs to use JavaScript to ensure the best user experience. Please turn on JavaScript and refresh the page.</p> 
+    </div> 
+    <div class="modal-right"> 
+    </div> 
+   </div> 
+  </noscript> 
+  <div class="btt-overlay hidden" id="btt-overlay"> 
+   <i class="fas fa-arrow-circle-up" onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '/#'"></i> 
+  </div> 
+  <!-- --> 
+  <!-- --> 
+  <!-- --> 
+  <!-- --> 
+  <!-- --> 
+  <!--<script type="text/javascript">
+			window.onload = setupLayout();
+		</script>--> 
+ </body>
+</html>
